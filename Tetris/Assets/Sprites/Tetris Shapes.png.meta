@@ -126,8 +126,8 @@ TextureImporter:
       name: Tetris Shapes_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 286
+        x: 36
+        y: 287
         width: 142
         height: 215
       alignment: 0
@@ -147,12 +147,12 @@ TextureImporter:
       name: Tetris Shapes_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 430
-        width: 215
+        x: 214
+        y: 432
+        width: 289
         height: 67
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -1072,3 +1072,16 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 7261.997729 seconds.
+  path: Assets/Prefabs/Tetris Shapes/Tetris Shape L.prefab
+  artifactKey: Guid(4a1fb580e7f940647a00b5087599ff56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tetris Shapes/Tetris Shape L.prefab using Guid(4a1fb580e7f940647a00b5087599ff56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0a3f3d6309da1fcc01ede4ad2547ff6') in 0.287755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
