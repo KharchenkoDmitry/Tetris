@@ -5,29 +5,62 @@ using UnityEngine.UIElements;
 
 public class PlayerControl : MonoBehaviour
 {
-    private float mapBorders = 2;
     private bool moveLeft;
     private bool moveRight;
-    
-    void Start()
-    {
+    private bool rotationPlayer;
 
-
-    }
-
-
-    void Update()
+    private bool isMoving;
+    private Vector3 originalPos, targetPos;
+    private float timeToMove = 0.2f;
+    private void MovePlayer()
     {
         moveLeft = Input.GetKeyDown(KeyCode.A);
         moveRight = Input.GetKeyDown(KeyCode.D);
 
-        if (moveLeft && transform.position.x > -mapBorders)
+
+        if (moveLeft && !isMoving)
         {
-            transform.position += Vector3.left;
+            StartCoroutine(MovePlayerCoroutine(Vector3.left));
         }
-        else if (moveRight && transform.position.x < mapBorders)
+        else if (moveRight && !isMoving)
         {
-            transform.position += Vector3.right;
+            StartCoroutine(MovePlayerCoroutine(Vector3.right));
         }
+    }
+    private void RotatePlayer()
+    {
+        rotationPlayer = Input.GetKeyDown(KeyCode.Space);
+
+        if (rotationPlayer)
+        {
+            transform.Rotate(Vector3.back, 90f);
+        }
+    }
+   
+    void Update()
+    {
+        MovePlayer();
+        RotatePlayer();
+    }
+
+    private IEnumerator MovePlayerCoroutine(Vector3 direction)
+    {
+        isMoving = true;
+
+        float elapsedTime = 0;
+
+        originalPos = transform.position;
+        targetPos = originalPos + direction;
+
+        while (elapsedTime < timeToMove)
+        {
+            transform.position = Vector3.Lerp(originalPos, targetPos, (elapsedTime / timeToMove));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPos;
+
+        isMoving = false;
     }
 }
